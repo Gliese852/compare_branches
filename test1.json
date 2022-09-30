@@ -1,0 +1,785 @@
+{
+    "length": 177177,
+    "packages": [
+        {
+            "arch": "aarch64",
+            "buildtime": 1657802745,
+            "disttag": "p10+303432.100.3.1",
+            "epoch": 1,
+            "name": "0ad",
+            "release": "alt0_0_rc1.p10",
+            "source": "0ad",
+            "version": "0.0.26"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1657802745,
+            "disttag": "p10+303432.100.3.1",
+            "epoch": 1,
+            "name": "0ad-debuginfo",
+            "release": "alt0_0_rc1.p10",
+            "source": "0ad",
+            "version": "0.1.26"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1633419531,
+            "disttag": "p10+284894.100.5.1",
+            "epoch": 0,
+            "name": "389-ds-base",
+            "release": "alt1",
+            "source": "389-ds-base",
+            "version": "1.4.3.25"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1633419531,
+            "disttag": "p10+284894.100.5.1",
+            "epoch": 0,
+            "name": "389-ds-base-debuginfo",
+            "release": "alt1",
+            "source": "389-ds-base",
+            "version": "1.4.3.25"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1633419531,
+            "disttag": "p10+284894.100.5.1",
+            "epoch": 0,
+            "name": "389-ds-base-devel",
+            "release": "alt1",
+            "source": "389-ds-base",
+            "version": "1.4.3.25"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1633419531,
+            "disttag": "p10+284894.100.5.1",
+            "epoch": 0,
+            "name": "389-ds-base-libs",
+            "release": "alt1",
+            "source": "389-ds-base",
+            "version": "1.4.4.25"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1633419531,
+            "disttag": "p10+284894.100.5.1",
+            "epoch": 0,
+            "name": "389-ds-base-libs-debuginfo",
+            "release": "alt1",
+            "source": "389-ds-base",
+            "version": "1.4.3.25"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1607514444,
+            "disttag": "sisyphus+263143.100.1.1",
+            "epoch": 0,
+            "name": "3proxy",
+            "release": "alt2",
+            "source": "3proxy",
+            "version": "0.6.1"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1607514444,
+            "disttag": "sisyphus+263143.100.1.1",
+            "epoch": 0,
+            "name": "3proxy-debuginfo",
+            "release": "alt2",
+            "source": "3proxy",
+            "version": "0.6.1"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1452258427,
+            "disttag": "",
+            "epoch": 0,
+            "name": "4th",
+            "release": "alt1",
+            "source": "4th",
+            "version": "3.62.2"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1452258427,
+            "disttag": "",
+            "epoch": 0,
+            "name": "4th-debuginfo",
+            "release": "alt1",
+            "source": "4th",
+            "version": "3.62.2"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1600445730,
+            "disttag": "sisyphus+258318.100.1.1",
+            "epoch": 0,
+            "name": "4ti2",
+            "release": "alt1_7",
+            "source": "4ti2",
+            "version": "1.6.9"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1600445730,
+            "disttag": "sisyphus+258318.100.1.1",
+            "epoch": 0,
+            "name": "4ti2-debuginfo",
+            "release": "alt1_7",
+            "source": "4ti2",
+            "version": "1.6.9"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1600445730,
+            "disttag": "sisyphus+258318.100.1.1",
+            "epoch": 0,
+            "name": "4ti2-devel",
+            "release": "alt1_7",
+            "source": "4ti2",
+            "version": "1.6.9"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1600445730,
+            "disttag": "sisyphus+258318.100.1.1",
+            "epoch": 0,
+            "name": "4ti2-libs",
+            "release": "alt1_7",
+            "source": "4ti2",
+            "version": "1.6.9"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1600445730,
+            "disttag": "sisyphus+258318.100.1.1",
+            "epoch": 0,
+            "name": "4ti2-libs-debuginfo",
+            "release": "alt1_7",
+            "source": "4ti2",
+            "version": "1.6.9"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1626520679,
+            "disttag": "sisyphus+279420.100.1.1",
+            "epoch": 0,
+            "name": "7-zip",
+            "release": "alt2",
+            "source": "7-zip",
+            "version": "21.02"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1626520679,
+            "disttag": "sisyphus+279420.100.1.1",
+            "epoch": 0,
+            "name": "7-zip-debuginfo",
+            "release": "alt2",
+            "source": "7-zip",
+            "version": "21.02"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1530556202,
+            "disttag": "",
+            "epoch": 2,
+            "name": "7colors",
+            "release": "alt1",
+            "source": "7colors",
+            "version": "0.10"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1530556202,
+            "disttag": "",
+            "epoch": 2,
+            "name": "7colors-debuginfo",
+            "release": "alt1",
+            "source": "7colors",
+            "version": "0.10"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1602159269,
+            "disttag": "sisyphus+259420.100.1.1",
+            "epoch": 0,
+            "name": "9wm",
+            "release": "alt2",
+            "source": "9wm",
+            "version": "1.4.1"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1602159269,
+            "disttag": "sisyphus+259420.100.1.1",
+            "epoch": 0,
+            "name": "9wm-debuginfo",
+            "release": "alt2",
+            "source": "9wm",
+            "version": "1.4.1"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1606087673,
+            "disttag": "sisyphus+262275.100.1.1",
+            "epoch": 0,
+            "name": "AGReader",
+            "release": "alt2_26",
+            "source": "AGReader",
+            "version": "1.2"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1606087673,
+            "disttag": "sisyphus+262275.100.1.1",
+            "epoch": 0,
+            "name": "AGReader-debuginfo",
+            "release": "alt2_26",
+            "source": "AGReader",
+            "version": "1.2"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1624782913,
+            "disttag": "sisyphus+275770.100.1.1",
+            "epoch": 0,
+            "name": "AcetoneISO2",
+            "release": "alt2",
+            "source": "AcetoneISO2",
+            "version": "2.4"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1614137154,
+            "disttag": "sisyphus+266579.200.4.2",
+            "epoch": 0,
+            "name": "AlephOne",
+            "release": "alt1.3",
+            "source": "AlephOne",
+            "version": "1.0.1"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1614137154,
+            "disttag": "sisyphus+266579.200.4.2",
+            "epoch": 0,
+            "name": "AlephOne-debuginfo",
+            "release": "alt1.3",
+            "source": "AlephOne",
+            "version": "1.0.1"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1614470079,
+            "disttag": "sisyphus+267121.100.1.1",
+            "epoch": 0,
+            "name": "Ants",
+            "release": "alt2_31",
+            "source": "Ants",
+            "version": "1.4"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1614470079,
+            "disttag": "sisyphus+267121.100.1.1",
+            "epoch": 0,
+            "name": "Ants-debuginfo",
+            "release": "alt2_31",
+            "source": "Ants",
+            "version": "1.4"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1614470079,
+            "disttag": "sisyphus+267121.100.1.1",
+            "epoch": 0,
+            "name": "Ants-level-editor",
+            "release": "alt2_31",
+            "source": "Ants",
+            "version": "1.4"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1614470079,
+            "disttag": "sisyphus+267121.100.1.1",
+            "epoch": 0,
+            "name": "Ants-level-editor-debuginfo",
+            "release": "alt2_31",
+            "source": "Ants",
+            "version": "1.4"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1600440277,
+            "disttag": "sisyphus+258304.100.1.1",
+            "epoch": 0,
+            "name": "AriaMaestosa",
+            "release": "alt1.qa1",
+            "source": "AriaMaestosa",
+            "version": "1.4.6"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1600440277,
+            "disttag": "sisyphus+258304.100.1.1",
+            "epoch": 0,
+            "name": "AriaMaestosa-debuginfo",
+            "release": "alt1.qa1",
+            "source": "AriaMaestosa",
+            "version": "1.4.6"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1622486489,
+            "disttag": "sisyphus+273099.100.1.1",
+            "epoch": 0,
+            "name": "ArxLibertatis",
+            "release": "alt1.20200607.1",
+            "source": "ArxLibertatis",
+            "version": "1.2"
+        },
+        {
+            "arch": "aarch64",
+            "buildtime": 1622486489,
+            "disttag": "sisyphus+273099.100.1.1",
+            "epoch": 0,
+            "name": "ArxLibertatis-debuginfo",
+            "release": "alt1.20200607.1",
+            "source": "ArxLibertatis",
+            "version": "1.2"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1657802519,
+            "disttag": "p10+303432.100.3.1",
+            "epoch": 1,
+            "name": "0ad",
+            "release": "alt0_0_rc1.p10",
+            "source": "0ad",
+            "version": "0.0.26"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1657802519,
+            "disttag": "p10+303432.100.3.1",
+            "epoch": 1,
+            "name": "0ad-debuginfo",
+            "release": "alt0_0_rc1.p10",
+            "source": "0ad",
+            "version": "0.0.26"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1633419512,
+            "disttag": "p10+284894.100.5.1",
+            "epoch": 0,
+            "name": "389-ds-base",
+            "release": "alt1",
+            "source": "389-ds-base",
+            "version": "1.4.3.25"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1633419512,
+            "disttag": "p10+284894.100.5.1",
+            "epoch": 0,
+            "name": "389-ds-base-debuginfo",
+            "release": "alt1",
+            "source": "389-ds-base",
+            "version": "1.4.3.25"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1633419512,
+            "disttag": "p10+284894.100.5.1",
+            "epoch": 0,
+            "name": "389-ds-base-devel",
+            "release": "alt1",
+            "source": "389-ds-base",
+            "version": "1.4.3.25"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1633419512,
+            "disttag": "p10+284894.100.5.1",
+            "epoch": 0,
+            "name": "389-ds-base-libs",
+            "release": "alt1",
+            "source": "389-ds-base",
+            "version": "1.4.3.25"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1633419512,
+            "disttag": "p10+284894.100.5.1",
+            "epoch": 0,
+            "name": "389-ds-base-libs-debuginfo",
+            "release": "alt1",
+            "source": "389-ds-base",
+            "version": "1.4.3.25"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1607514443,
+            "disttag": "sisyphus+263143.100.1.1",
+            "epoch": 0,
+            "name": "3proxy",
+            "release": "alt2",
+            "source": "3proxy",
+            "version": "0.6.1"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1607514443,
+            "disttag": "sisyphus+263143.100.1.1",
+            "epoch": 0,
+            "name": "3proxy-debuginfo",
+            "release": "alt2",
+            "source": "3proxy",
+            "version": "0.6.1"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1393439655,
+            "disttag": "",
+            "epoch": 0,
+            "name": "4th",
+            "release": "alt1",
+            "source": "4th",
+            "version": "3.62.2"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1393439655,
+            "disttag": "",
+            "epoch": 0,
+            "name": "4th-debuginfo",
+            "release": "alt1",
+            "source": "4th",
+            "version": "3.62.2"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1600445698,
+            "disttag": "sisyphus+258318.100.1.1",
+            "epoch": 0,
+            "name": "4ti2",
+            "release": "alt1_7",
+            "source": "4ti2",
+            "version": "1.6.9"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1600445698,
+            "disttag": "sisyphus+258318.100.1.1",
+            "epoch": 0,
+            "name": "4ti2-debuginfo",
+            "release": "alt1_7",
+            "source": "4ti2",
+            "version": "1.6.9"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1600445698,
+            "disttag": "sisyphus+258318.100.1.1",
+            "epoch": 0,
+            "name": "4ti2-devel",
+            "release": "alt1_7",
+            "source": "4ti2",
+            "version": "1.6.9"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1600445698,
+            "disttag": "sisyphus+258318.100.1.1",
+            "epoch": 0,
+            "name": "4ti2-libs",
+            "release": "alt1_7",
+            "source": "4ti2",
+            "version": "1.6.9"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1600445698,
+            "disttag": "sisyphus+258318.100.1.1",
+            "epoch": 0,
+            "name": "4ti2-libs-debuginfo",
+            "release": "alt1_7",
+            "source": "4ti2",
+            "version": "1.6.9"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1626520679,
+            "disttag": "sisyphus+279420.100.1.1",
+            "epoch": 0,
+            "name": "7-zip",
+            "release": "alt2",
+            "source": "7-zip",
+            "version": "21.02"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1626520679,
+            "disttag": "sisyphus+279420.100.1.1",
+            "epoch": 0,
+            "name": "7-zip-debuginfo",
+            "release": "alt2",
+            "source": "7-zip",
+            "version": "21.02"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1530555826,
+            "disttag": "",
+            "epoch": 2,
+            "name": "7colors",
+            "release": "alt1",
+            "source": "7colors",
+            "version": "0.10"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1530555826,
+            "disttag": "",
+            "epoch": 2,
+            "name": "7colors-debuginfo",
+            "release": "alt1",
+            "source": "7colors",
+            "version": "0.10"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1502008210,
+            "disttag": "",
+            "epoch": 0,
+            "name": "7kaa",
+            "release": "alt1",
+            "source": "7kaa",
+            "version": "2.14.7"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1502008210,
+            "disttag": "",
+            "epoch": 0,
+            "name": "7kaa-debuginfo",
+            "release": "alt1",
+            "source": "7kaa",
+            "version": "2.14.7"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1602159274,
+            "disttag": "sisyphus+259420.100.1.1",
+            "epoch": 0,
+            "name": "9wm",
+            "release": "alt2",
+            "source": "9wm",
+            "version": "1.4.1"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1602159274,
+            "disttag": "sisyphus+259420.100.1.1",
+            "epoch": 0,
+            "name": "9wm-debuginfo",
+            "release": "alt2",
+            "source": "9wm",
+            "version": "1.4.1"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1606087673,
+            "disttag": "sisyphus+262275.100.1.1",
+            "epoch": 0,
+            "name": "AGReader",
+            "release": "alt2_26",
+            "source": "AGReader",
+            "version": "1.2"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1606087673,
+            "disttag": "sisyphus+262275.100.1.1",
+            "epoch": 0,
+            "name": "AGReader-debuginfo",
+            "release": "alt2_26",
+            "source": "AGReader",
+            "version": "1.2"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1624782931,
+            "disttag": "sisyphus+275770.100.1.1",
+            "epoch": 0,
+            "name": "AcetoneISO2",
+            "release": "alt2",
+            "source": "AcetoneISO2",
+            "version": "2.4"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1614137121,
+            "disttag": "sisyphus+266579.200.4.2",
+            "epoch": 0,
+            "name": "AlephOne",
+            "release": "alt1.3",
+            "source": "AlephOne",
+            "version": "1.0.1"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1614137121,
+            "disttag": "sisyphus+266579.200.4.2",
+            "epoch": 0,
+            "name": "AlephOne-debuginfo",
+            "release": "alt1.3",
+            "source": "AlephOne",
+            "version": "1.0.1"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1614470076,
+            "disttag": "sisyphus+267121.100.1.1",
+            "epoch": 0,
+            "name": "Ants",
+            "release": "alt2_31",
+            "source": "Ants",
+            "version": "1.4"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1614470076,
+            "disttag": "sisyphus+267121.100.1.1",
+            "epoch": 0,
+            "name": "Ants-debuginfo",
+            "release": "alt2_31",
+            "source": "Ants",
+            "version": "1.4"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1614470076,
+            "disttag": "sisyphus+267121.100.1.1",
+            "epoch": 0,
+            "name": "Ants-level-editor",
+            "release": "alt2_31",
+            "source": "Ants",
+            "version": "1.4"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1614470076,
+            "disttag": "sisyphus+267121.100.1.1",
+            "epoch": 0,
+            "name": "Ants-level-editor-debuginfo",
+            "release": "alt2_31",
+            "source": "Ants",
+            "version": "1.4"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1600440224,
+            "disttag": "sisyphus+258304.100.1.1",
+            "epoch": 0,
+            "name": "AriaMaestosa",
+            "release": "alt1.qa1",
+            "source": "AriaMaestosa",
+            "version": "1.4.7"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1600440224,
+            "disttag": "sisyphus+258304.100.1.1",
+            "epoch": 0,
+            "name": "AriaMaestosa-debuginfo",
+            "release": "alt1.qa1",
+            "source": "AriaMaestosa",
+            "version": "1.4.6"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1622486482,
+            "disttag": "sisyphus+273099.100.1.1",
+            "epoch": 0,
+            "name": "ArxLibertatis",
+            "release": "alt1.20200607.1",
+            "source": "ArxLibertatis",
+            "version": "1.2"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1622486482,
+            "disttag": "sisyphus+273099.100.1.1",
+            "epoch": 0,
+            "name": "ArxLibertatis-debuginfo",
+            "release": "alt1.20200607.1",
+            "source": "ArxLibertatis",
+            "version": "1.2"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1622486482,
+            "disttag": "sisyphus+273099.100.1.1",
+            "epoch": 0,
+            "name": "ArxLibertatis-devel",
+            "release": "alt1.20200607.1",
+            "source": "ArxLibertatis",
+            "version": "1.2"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1618495151,
+            "disttag": "sisyphus+269998.200.2.1",
+            "epoch": 0,
+            "name": "CBFlib-utils",
+            "release": "alt3",
+            "source": "CBFlib",
+            "version": "0.9.2.3"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1618495151,
+            "disttag": "sisyphus+269998.200.2.1",
+            "epoch": 0,
+            "name": "CBFlib-utils-debuginfo",
+            "release": "alt3",
+            "source": "CBFlib",
+            "version": "0.9.2.3"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1622222043,
+            "disttag": "sisyphus+269879.1300.52.1",
+            "epoch": 0,
+            "name": "CGenius",
+            "release": "alt1.git.11.gb3efc3da2.1",
+            "source": "CGenius",
+            "version": "2.6.3.1"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1647244832,
+            "disttag": "p10+296130.100.2.1",
+            "epoch": 0,
+            "name": "CTK",
+            "release": "alt3.git.dc2e1289",
+            "source": "CTK",
+            "version": "0.1.0"
+        },
+        {
+            "arch": "x86_64",
+            "buildtime": 1647244832,
+            "disttag": "p10+296130.100.2.1",
+            "epoch": 0,
+            "name": "CTK-debuginfo",
+            "release": "alt3.git.dc2e1289",
+            "source": "CTK",
+            "version": "0.1.0"
+        }
+    ]
+}

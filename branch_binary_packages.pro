@@ -21,4 +21,4 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += compare_branches.cpp
 
 QT += network
-CONFIG += debug
+LIBS += -lrpm
