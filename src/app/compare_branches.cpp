@@ -1,83 +1,17 @@
 #include <QObject>
 #include <QFile>
+#include <QDebug>
+#include <QVector>
 #include <QCoreApplication>
 #include <QTextStream>
-#include <QNetworkRequest>
-#include <QNetworkReply>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QEventLoop>
+#include <QSslConfiguration>
 #include <rpm/rpmver.h>
+#include "getrest.h"
 
-QJsonObject parseJson(const QByteArray &text)
-{
-	QJsonObject jsonObj;
-	QJsonDocument jsonDoc;
-	QJsonParseError parseError;
-	jsonDoc = QJsonDocument::fromJson(text, &parseError);
-	if(parseError.error != QJsonParseError::NoError){
-		qDebug() << text;
-		qWarning() << "Json parse error: " << parseError.errorString();
-	} else {
-		if(jsonDoc.isObject())
-			jsonObj  = jsonDoc.object();
-		else if (jsonDoc.isArray())
-			jsonObj["non_field_errors"] = jsonDoc.array();
-	}
-	return jsonObj;
-}
-
-QNetworkRequest createRequest(const QString &url, const QSslConfiguration &sslConfig)
-{
-	QNetworkRequest request;
-	qDebug() << url;
-	request.setUrl(QUrl(url));
-	request.setHeader(QNetworkRequest::ServerHeader, "application/json");
-	request.setSslConfiguration(sslConfig);
-	return request;
-}
-
-bool onFinishRequest(QNetworkReply *reply)
-{
-	auto replyError = reply->error();
-	if (replyError == QNetworkReply::NoError ) {
-		int code = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
-		if ((code >=200) && (code < 300)) {
-			return true;
-		}
-	}
-	return false;
-}
-
-bool sendRequest(
-		QNetworkRequest request,
-		QJsonObject &resp)
-{
-	QNetworkAccessManager manager;
-	QNetworkReply *reply;
-	reply = manager.get(request);
-	QEventLoop loop;
-	bool success = true;
-
-	loop.connect(reply, &QNetworkReply::finished, &loop, [reply, &resp, &loop, &success]() {
-
-		 resp = parseJson(reply->readAll());
-
-		 if (!onFinishRequest(reply)) {
-		     qDebug() << reply->error();
-			 success = false;
-		 }
-		 reply->close();
-		 reply->deleteLater();
-		 loop.quit();
-	});
-
-	loop.exec();
-
-	return success;
-
-}
 
 struct JsonArrayRange {
 	QJsonArray::iterator begin;
@@ -163,7 +97,6 @@ QJsonArray versionGreater(JsonArrayRange r1, JsonArrayRange r2)
 				QString v1 = i->toObject()["version"].toString();
 				QString v2 = j->toObject()["version"].toString();
 				if(versionStringGreater(v1, v2)) {
-					qDebug() << name << ":" << v1 << " is greater than " << v2;
 					result.push_back(*i);
 				}
 				r2.begin = j;
@@ -191,30 +124,33 @@ bool checkSortingByName(JsonArrayRange r)
 }
 
 int main(int argc, char *argv[]) {
-	QCoreApplication app(argc, argv);
+
 	QTextStream out{stdout};
+	QString base_url = "https://rdb.altlinux.org/api/export/branch_binary_packages/";
+	
 
-	//QFile f1{"p10.json"};
-	//QFile f2{"sisyphus.json"};
-
-	QFile f1{"test1.json"};
-	QFile f2{"test2.json"};
-
-	if (!f1.open(QIODevice::ReadOnly)) {
-		qWarning("Cannot open file for reading");
-		return 1;
+	if (argc != 3) {
+		qDebug() << "Usage: compare_branches <branch1> <branch2>";
+		return 0;
 	}
 
-	if (!f2.open(QIODevice::ReadOnly)) {
-		qWarning("Cannot open file for reading");
-		return 1;
+	QString branch1(argv[1]);
+	QString branch2(argv[2]);
+
+	QSslConfiguration sslConfig;
+	sslConfig.setDefaultConfiguration(QSslConfiguration::defaultConfiguration());
+	sslConfig.setProtocol(QSsl::TlsV1_2);
+
+	QJsonObject j1, j2;
+
+	qDebug() << "Get branch" << branch1;
+	if(!sendRequest(createRequest(base_url + branch1, sslConfig), j1)) {
+		qFatal("Branch %s failed to load", branch1.toLocal8Bit().data());
 	}
-
-	QJsonObject j1 = parseJson(QTextStream(&f1).readAll().toLocal8Bit());
-	QJsonObject j2 = parseJson(QTextStream(&f2).readAll().toLocal8Bit());
-
-	f1.close();
-	f2.close();
+	qDebug() << "Get branch" << branch2;
+	if(!sendRequest(createRequest(base_url + branch2, sslConfig), j2)) {
+		qFatal("Branch %s failed to load", branch2.toLocal8Bit().data());
+	}
 
 	QJsonArray ja1 = j1["packages"].toArray();
 	QJsonArray ja2 = j2["packages"].toArray();
@@ -228,61 +164,20 @@ int main(int argc, char *argv[]) {
 	QJsonObject result;
 	QJsonArray query;
 	for(auto arch : arches1) {
-		qDebug() << "Doing arch: " << arch;
+		qDebug() << "Processing architecture" << arch;
 		QJsonObject jo;
 		jo["arch"] = arch;
 		JsonArrayRange r1 = selectArch(ja1, arch);
 		JsonArrayRange r2 = selectArch(ja2, arch);
-		//qDebug("check sort");
-		if(!checkSortingByName(r1) || !checkSortingByName(r2)) qFatal("packages is supposed to be sorted by name");
-		//qDebug("sub 1-2");
+		if(!checkSortingByName(r1) || !checkSortingByName(r2)) qFatal("Packages is supposed to be sorted by name");
 		jo["only1"] = subtraction(r1, r2);
-		//qDebug("sub 2-1");
 		jo["only2"] = subtraction(r2, r1);
-		//qDebug("greater");
 		jo["greater1"] = versionGreater(r1, r2);
 		query.push_back(std::move(jo));
 	}
 	result["query"] = query;
 
 	out << QJsonDocument(result).toJson();
-
-	if(true) return 0;
-
-	auto arr1 = j1["packages"].toArray();
-
-	QString prevarch;
-	QSet<QString> prevarches;
-
-	for(auto i1 : arr1) {
-		QString arch = i1.toObject()["arch"].toString();
-		if(!prevarches.contains(arch)) {
-			qDebug() << "New arch: " << arch;
-			prevarches.insert(arch);
-		} else if (prevarch != arch) {
-			qDebug() << "not new arch: " << arch;
-		}
-		prevarch = arch;
-	}
-
-	if(true) return 0;
-
-	if (argc < 2) {
-		qDebug() << "need branch";
-		return 0;
-	}
-
-	QString branch(argv[1]);
-
-	QSslConfiguration sslConfig;
-	sslConfig.setDefaultConfiguration(QSslConfiguration::defaultConfiguration());
-	sslConfig.setProtocol(QSsl::TlsV1_2);
-
-	QJsonObject json;
-
-	//sendRequest(createRequest("https://rdb.altlinux.org/api/license", sslConfig), json);
-	sendRequest(createRequest("https://rdb.altlinux.org/api/export/branch_binary_packages/" + branch, sslConfig), json);
-	//sendRequest(createRequest("https://rdb.altlinux.org/api/export/sitemap_packages/p10", sslConfig), json);
 
 	return 0;
 }
