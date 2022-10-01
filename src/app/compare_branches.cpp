@@ -1,17 +1,17 @@
-#include <QObject>
-#include <QFile>
 #include <QDebug>
 #include <QVector>
-#include <QCoreApplication>
 #include <QTextStream>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
-#include <QEventLoop>
 #include <QSslConfiguration>
-#include <rpm/rpmver.h>
-#include "getrest.h"
+#if __has_include(<rpm/rpmver.h>)
+	#include <rpm/rpmver.h>
+#else
+	#include <rpm/rpmvercmp.h>
+#endif
 
+#include "getrest.h"
 
 struct JsonArrayRange {
 	QJsonArray::iterator begin;
@@ -115,8 +115,7 @@ bool checkSortingByName(JsonArrayRange r)
 		QString i_name = i->toObject()["name"].toString();
 		QString j_name = j->toObject()["name"].toString();
 		if (j_name <= i_name) {
-			qDebug() << i_name << " -- " << j_name;
-
+			qInfo() << i_name << " -- " << j_name;
 			return false;
 		}
 	}
@@ -130,7 +129,7 @@ int main(int argc, char *argv[]) {
 	
 
 	if (argc != 3) {
-		qDebug() << "Usage: compare_branches <branch1> <branch2>";
+		qInfo() << "Usage: compare_branches <branch1> <branch2>";
 		return 0;
 	}
 
@@ -139,15 +138,16 @@ int main(int argc, char *argv[]) {
 
 	QSslConfiguration sslConfig;
 	sslConfig.setDefaultConfiguration(QSslConfiguration::defaultConfiguration());
+	sslConfig.setPeerVerifyMode(QSslSocket::VerifyNone);
 	sslConfig.setProtocol(QSsl::TlsV1_2);
 
 	QJsonObject j1, j2;
 
-	qDebug() << "Get branch" << branch1;
+	qInfo() << "Get branch" << branch1;
 	if(!sendRequest(createRequest(base_url + branch1, sslConfig), j1)) {
 		qFatal("Branch %s failed to load", branch1.toLocal8Bit().data());
 	}
-	qDebug() << "Get branch" << branch2;
+	qInfo() << "Get branch" << branch2;
 	if(!sendRequest(createRequest(base_url + branch2, sslConfig), j2)) {
 		qFatal("Branch %s failed to load", branch2.toLocal8Bit().data());
 	}
@@ -164,7 +164,7 @@ int main(int argc, char *argv[]) {
 	QJsonObject result;
 	QJsonArray query;
 	for(auto arch : arches1) {
-		qDebug() << "Processing architecture" << arch;
+		qInfo() << "Processing architecture" << arch;
 		QJsonObject jo;
 		jo["arch"] = arch;
 		JsonArrayRange r1 = selectArch(ja1, arch);
