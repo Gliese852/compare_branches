@@ -38,8 +38,9 @@ JsonArrayRange selectArch(QJsonArray &array, const QString &arch)
 //using a vector to keep the sequence
 QVector<QString> getArches(const QJsonArray &array)
 {
+	QJsonValue a;
 	QVector<QString> result;
-	for(auto i : array) {
+	for(const auto &i : array) {
 		QString arch = i.toObject()["arch"].toString();
 		if (!result.contains(arch)) {
 			result.push_back(std::move(arch));
@@ -126,7 +127,6 @@ int main(int argc, char *argv[]) {
 
 	QTextStream out{stdout};
 	QString base_url = "https://rdb.altlinux.org/api/export/branch_binary_packages/";
-	
 
 	if (argc != 3) {
 		qInfo() << "Usage: compare_branches <branch1> <branch2>";
@@ -163,7 +163,7 @@ int main(int argc, char *argv[]) {
 
 	QJsonObject result;
 	QJsonArray query;
-	for(auto arch : arches1) {
+	for(auto &arch : arches1) {
 		qInfo() << "Processing architecture" << arch;
 		QJsonObject jo;
 		jo["arch"] = arch;
